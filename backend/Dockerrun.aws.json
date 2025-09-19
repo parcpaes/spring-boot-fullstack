@@ -1,0 +1,27 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "java-web-api",
+      "image": "docker.io/parcpaes/spring-boot-api:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value": "jdbc:postgresql://awseb-e-uxn9ynckbe-stack-awsebrdsdatabase-uuaiqacym64n.cx20ckq8izc2.sa-east-1.rds.amazonaws.com:5432/amigoscode"
+        },
+        {
+          "name": "JAVA_OPTS",
+          "value": "-Xmx512m -Xms256m"
+        }
+      ]
+    }
+  ]
+}
