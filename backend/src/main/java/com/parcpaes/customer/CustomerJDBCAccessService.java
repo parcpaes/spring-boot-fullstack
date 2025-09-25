@@ -1,18 +1,15 @@
 package com.parcpaes.customer;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 @Repository()
@@ -69,7 +66,7 @@ public class CustomerJDBCAccessService implements CustomerDao {
 
     @Override
     public boolean existsCustomerWithEmail(String email) {
-        String sql = "SELECT * from customer where email = ?";
+        String sql = "SELECT * from customer where emai = ?";
         Optional<Customer> customer = jdbcTemplate.query(sql, customerRowMapper, email).stream().findFirst();
         return customer.isPresent();
     }
