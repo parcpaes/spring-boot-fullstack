@@ -37,7 +37,7 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: login to Docker Hub
-        uses: docker/logi-action@v3
+        uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
