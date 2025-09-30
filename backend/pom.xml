@@ -194,6 +194,9 @@
 							<tag>latest</tag>
 						</tags>
 					</to>
+					<container>
+						<mainClass>com.parcpaes.Main</mainClass>
+					</container>
 				</configuration>
 			</plugin>
 		</plugins>
